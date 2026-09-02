@@ -16,22 +16,25 @@ Important decisions are recorded here. Do not remove historical decisions becaus
 ## ADR-002 - Solo Execution Adaptation
 
 - Date: 2026-08-23
-- Status: ACCEPTED, pending CadetX approval for solo participation
+- Status: ACCEPTED
 - Decision: Preserve technical requirements while adapting team-only process requirements to solo execution.
 - Context: Official CadetX brief assumes a team of three and rotating Scrum Master. User intends to work alone.
 - Options considered: ignore team process; simulate team roles; adapt to solo evidence.
 - Chosen approach: solo weekly planning, documented self-review, disciplined Git history, and per-module documentation.
 - Reasoning: Maintains evidence of consistency and engineering quality without inventing teammates.
-- Consequences: Collaboration criterion remains a risk unless CadetX approves solo work.
+- Consequences: Collaboration criterion is satisfied via solo evidence practices instead of a team.
+- Update (2026-09-02): CadetX solo participation confirmed by the user. No longer pending.
 
 ## DECISION-001 - Dataset Domain and Dataset
 
 - Date: 2026-08-23
-- Status: OPEN
+- Status: RESOLVED (2026-09-02)
 - Problem: The system needs a dataset that demonstrates many quality issues and supports objective evaluation.
 - Options: naturally messy dataset; clean dataset plus controlled corruption; hybrid.
-- Current recommendation: hybrid.
-- Needed from user: approve dataset strategy and choose candidate domain(s).
+- Decision: Healthcare domain. Dataset: CMS "Medicare Physician & Other Practitioners - by Provider and Service" (public dataset).
+- Location: stored locally by the user outside this repository (`dataset` folder on the local machine); not yet committed to `data/` here.
+- Strategy: hybrid remains the plan - use this real public dataset as the base/raw source, and layer a controlled corruption generator on top to create labeled ground truth for evaluation (see `docs/07-dataset-strategy.md`).
+- Follow-up: confirm file size and licensing terms before deciding how it enters version control (see DECISION-002), and add it under `data/raw/` per the repository structure once transferred.
 
 ## DECISION-002 - Data Versioning Tool
 

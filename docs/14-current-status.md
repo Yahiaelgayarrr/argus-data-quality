@@ -1,10 +1,10 @@
 # Current Status
 
-Last updated: 2026-08-23
+Last updated: 2026-09-02
 
 ## Summary
 
-The project is in Phase 0. Planning documentation has been initialized. No application code, tests, datasets, Docker setup, or pipeline implementation exists yet.
+The project is in Phase 0. Planning documentation has been initialized. Solo participation is confirmed and the dataset/domain is chosen. No application code, tests, Docker setup, or pipeline implementation exists yet, and the dataset file itself has not yet been added to this repository.
 
 ## Status Table
 
@@ -12,7 +12,7 @@ The project is in Phase 0. Planning documentation has been initialized. No appli
 | --- | --- | --- |
 | Foundation | IN PROGRESS | Phase 0 Markdown docs created. |
 | Official requirements | PLANNED | Requirement IDs captured in `docs/00-official-requirements.md`. |
-| Dataset | OPEN | Strategy analyzed; no dataset selected. |
+| Dataset | RESOLVED (decision), PENDING (transfer) | Healthcare domain; CMS "Medicare Physician & Other Practitioners - by Provider and Service" chosen. Held locally by the user; not yet committed to `data/raw/`. See `docs/07-dataset-strategy.md`. |
 | Module 1 - Profiling | NOT STARTED | Specification drafted only. |
 | Module 2 - Cleaning | NOT STARTED | Specification drafted only. |
 | Module 3 - Validation | NOT STARTED | Specification drafted only. |
@@ -30,11 +30,10 @@ Phase 0 - Requirements, planning, architecture, dataset strategy, and decision g
 
 ## Current Blockers
 
-- CadetX solo participation approval.
-- Dataset/domain decision.
-- Dependency stack approval.
+- Dependency stack approval (DECISION-003).
+- Transfer the chosen dataset file into `data/raw/` and pick a versioning tool (DECISION-002).
 
 ## Next Recommended Action
 
-Approve or revise the Phase 0 planning foundation, then resolve DECISION-001: dataset strategy and first candidate domain.
+Bring the CMS Medicare dataset into the repository (raw, immutable copy), then approve the base dependency stack so Module 1 (Profiling) implementation can start.
 

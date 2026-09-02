@@ -7,7 +7,7 @@ This is the first file future humans and AI agents should read.
 - Project: CadetX - Automated Data Cleaning & Validation System
 - Repository: `cadetx-data-quality-pipeline`
 - Phase: Phase 0 - requirements, planning, architecture
-- Work mode: Solo execution, pending CadetX approval where the official brief expects a team of three
+- Work mode: Solo execution, confirmed (2026-09-02)
 - Current date initialized: 2026-08-23
 
 ## Official Source
@@ -50,7 +50,7 @@ Detailed architecture is in [docs/05-system-architecture.md](docs/05-system-arch
 | Area | Status |
 | --- | --- |
 | Foundation documentation | IN PROGRESS |
-| Dataset selection | OPEN |
+| Dataset selection | RESOLVED (transfer to repo pending) |
 | Module 1 - Profiling | NOT STARTED |
 | Module 2 - Cleaning | NOT STARTED |
 | Module 3 - Validation | NOT STARTED |
@@ -68,7 +68,7 @@ No final technical decisions have been made beyond using a documentation-first p
 
 ## Dataset
 
-No dataset has been selected. Dataset strategy options are analyzed in [docs/07-dataset-strategy.md](docs/07-dataset-strategy.md).
+Domain: Healthcare. Dataset: CMS "Medicare Physician & Other Practitioners - by Provider and Service" (chosen 2026-09-02). Currently held locally by the user; not yet transferred into `data/raw/` in this repository. Full strategy in [docs/07-dataset-strategy.md](docs/07-dataset-strategy.md).
 
 ## Technology Stack
 
@@ -116,14 +116,11 @@ These are not currently runnable.
 
 ## Current Blockers
 
-- CadetX solo participation confirmation.
-- Dataset/domain decision.
 - Technology stack approval.
+- Dataset file transfer into `data/raw/` and choice of versioning tool (DVC vs Git LFS).
 
 ## Next Recommended Action
 
-Review the Phase 0 documentation, then decide:
-
-1. Whether to proceed with the recommended hybrid dataset strategy.
-2. Which domain/dataset candidates to investigate first.
-3. Whether to approve the proposed base Python stack.
+1. Approve the proposed base Python stack (see [docs/08-technology-stack.md](docs/08-technology-stack.md)).
+2. Bring the CMS Medicare dataset into the repository as an immutable raw copy.
+3. Begin Module 1 (Profiling) implementation.

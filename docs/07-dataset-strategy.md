@@ -1,6 +1,6 @@
 # Dataset Strategy
 
-No dataset has been selected. Decision status: OPEN.
+Decision status: RESOLVED (2026-09-02). Domain: healthcare. Dataset: CMS "Medicare Physician & Other Practitioners - by Provider and Service" (public dataset), held locally by the user pending transfer into `data/raw/`.
 
 ## Strategy A - Naturally Messy Real-World Dataset
 
@@ -46,7 +46,7 @@ Cons:
 - Requires a corruption generator and careful documentation.
 - Need to avoid leakage from knowing injected labels during model design.
 
-Recommendation: prefer hybrid, pending approval.
+Recommendation: hybrid. Approved.
 
 ## Candidate Domains
 
@@ -68,5 +68,10 @@ Use a hybrid strategy:
 4. Use injected labels as evaluation ground truth.
 5. Keep a small deterministic fixture dataset for tests.
 
-Decision remains OPEN until the user approves the domain and dataset.
+## Chosen Dataset
+
+- Domain: Healthcare
+- Dataset: CMS "Medicare Physician & Other Practitioners - by Provider and Service"
+- Status: chosen by the user (2026-09-02), currently local-only (not yet added to this repository)
+- Open items: verify CMS licensing/usage terms, confirm file size, decide DVC vs Git LFS (DECISION-002) before committing it to `data/raw/`
 
