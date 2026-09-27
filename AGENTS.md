@@ -76,9 +76,8 @@ If any of the six cannot be answered, the task is not ready to start.
   grepping the engine for lending identifiers; the result must be empty.
 - **Do not silently change** requirements, architecture, interfaces,
   configuration, dependencies, or dataset assumptions. Propose, then change.
-- **Do not add a dependency** without recording it in
-  [`docs/04-tech-stack.md`](docs/04-tech-stack.md) with a reason and the
-  alternatives considered.
+- **Do not add a dependency** without recording it in `docs/04-tech-stack.md`
+  (planned) with a reason and the alternatives considered.
 - **Do not download or move datasets** without saying so first.
 - **Never commit data.** No CSV, no Parquet, no model weights. See
   [ADR-0009](docs/adr/0009-data-versioning-tool.md). The only exception is the

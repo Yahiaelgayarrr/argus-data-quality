@@ -102,6 +102,6 @@ Planned: `02-requirements.md`, `03-architecture.md`, `04-tech-stack.md`,
 
 ## Next action
 
-Write [`docs/02-requirements.md`](docs/02-requirements.md) — functional and
-non-functional requirements with acceptance criteria concrete enough to write
-tests against, each mapped to a brief requirement ID.
+Write `docs/02-requirements.md` — functional and non-functional requirements with
+acceptance criteria concrete enough to write tests against, each mapped to a brief
+requirement ID.
