@@ -4,13 +4,27 @@
 data/*
 !data/.gitkeep
 !data/fixtures/
+
+# Dataset payloads are ignored wherever they land, not only under data/.
+# A 1.6 GB download parked in the repository root must not be committable by
+# accident: a large blob stays in Git history permanently even after deletion.
+*.csv
+*.csv.gz
+*.tsv
+*.parquet
+*.feather
+*.arrow
+*.xlsx
+
+# The one exception: small committed fixtures, so the test suite runs on a
+# fresh clone with no download. These negations must come last to win.
+!tests/fixtures/
+!tests/fixtures/**
 !data/fixtures/**
 
-# DVC keeps the metafiles, not the payload
-/data/**/*.csv
-/data/**/*.csv.gz
-/data/**/*.parquet
-!tests/fixtures/**
+# Ground-truth corruption labels are generated, not committed
+labels/
+*.labels.json
 
 # Ground-truth corruption labels are generated, not committed
 labels/

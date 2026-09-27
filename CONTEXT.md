@@ -32,7 +32,7 @@ matrix, and nine architecture decision records.
 | --- | --- |
 | Charter | IMPLEMENTED |
 | Requirement traceability | IMPLEMENTED |
-| Architecture decision records 0001–0009 | IMPLEMENTED |
+| Architecture decision records 0001–0010 | IMPLEMENTED |
 | Requirements (functional / non-functional) | PLANNED — next |
 | Architecture document | PLANNED |
 | Tech stack document | PLANNED |
@@ -62,6 +62,7 @@ Requirement-level detail: [`docs/01-brief-traceability.md`](docs/01-brief-tracea
 | Rule kinds in Python, rule instances in YAML | [ADR-0007](docs/adr/0007-declarative-rule-config.md) |
 | Interface order: CLI → HTML report → FastAPI → React. Last two cuttable. | [ADR-0008](docs/adr/0008-interface-sequencing.md) |
 | Data versioning: DVC | [ADR-0009](docs/adr/0009-data-versioning-tool.md) |
+| Autoencoder detection in scope, with a mandatory CPU fallback | [ADR-0010](docs/adr/0010-autoencoder-in-scope.md) |
 
 **Superseded:** an earlier plan (2026-09-02) selected healthcare and the CMS
 Medicare provider dataset. Replaced by ADR-0003, which records why.
@@ -83,8 +84,13 @@ None yet. These are the intended commands and **do not currently work**:
 pytest                                             # test suite
 argus profile --input data.parquet --output out/   # Module 1
 argus run --config configs/lending.yaml            # full pipeline
+python pipeline.py --input data.csv --output results/   # PIPE-006, verbatim
 docker run argus:latest --input /data/loans.csv    # containerised
 ```
+
+`pipeline.py` is a thin root-level shim over the `argus` entry point. The brief
+specifies that exact command, so it must work as written rather than being
+rebranded.
 
 ## Document map
 

@@ -177,6 +177,6 @@ Before adding one:
 3. Is it free?
 4. What is the alternative, including writing it yourself?
 
-Record it in `docs/04-tech-stack.md` with the answer to 4. Pin the version. A
+Record it in `docs/04-tech-stack.md` (planned) with the answer to 4. Pin the version. A
 dependency added without a recorded reason will be removed by a future reader who
 cannot tell why it is there.

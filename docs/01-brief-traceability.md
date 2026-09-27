@@ -81,7 +81,7 @@ Output: `validation_report.json`
 | VAL-003 | REQUIRED | Validate categorical consistency | Tests plus report | PLANNED |
 | VAL-004 | REQUIRED | Isolation Forest anomaly detection | Evaluation against injected labels | PLANNED |
 | VAL-005 | REQUIRED | Local Outlier Factor anomaly detection | Evaluation against injected labels | PLANNED |
-| VAL-006 | REQUIRED | Autoencoder anomaly detection. The brief marks this advanced/optional; this project commits to it — see [ADR-0008](adr/0008-interface-sequencing.md) and `docs/00-charter.md` §5 | Evaluation plus CPU-fallback test | PLANNED |
+| VAL-006 | REQUIRED | Autoencoder anomaly detection. The brief marks this advanced/optional; this project commits to it — see [ADR-0010](adr/0010-autoencoder-in-scope.md) | Evaluation against the same labels as VAL-004/005, plus a CPU-fallback test | PLANNED |
 | VAL-007 | REQUIRED | Classify column meaning using NLP / semantic methods | Labelled-column accuracy | PLANNED |
 | VAL-008 | REQUIRED | Detect mislabelled columns | Detection rate on injected swaps | PLANNED |
 | VAL-009 | REQUIRED | Detect semantic inconsistencies | Evaluation plus report | PLANNED |
@@ -104,7 +104,7 @@ Output: end-to-end pipeline (CLI + Docker)
 | PIPE-003 | REQUIRED | YAML configuration for pipeline settings | Config files plus schema validation | PLANNED |
 | PIPE-004 | REQUIRED | Logging at info, warning and error levels | Log output plus tests | PLANNED |
 | PIPE-005 | REQUIRED | Data versioning. Resolved as DVC by [ADR-0009](adr/0009-data-versioning-tool.md) | `dvc.yaml`, `dvc.lock` | PLANNED |
-| PIPE-006 | REQUIRED | CLI: `python pipeline.py --input data.csv --output results/` | CLI tests plus docs | PLANNED |
+| PIPE-006 | REQUIRED | CLI: `python pipeline.py --input data.csv --output results/`. Satisfied by an `argus` console entry point, plus a root `pipeline.py` shim delegating to it so the brief's exact command works verbatim | CLI tests for both invocations, plus docs | PLANNED |
 | PIPE-007 | REQUIRED | Docker containerisation, running without a GPU | `Dockerfile` plus a verified run | PLANNED |
 | PIPE-008 | REQUIRED | Pinned dependency manifest | `requirements.txt` / `pyproject.toml` | PLANNED |
 | PIPE-009 | REQUIRED | Automated tests with pytest | Test suite | PLANNED |

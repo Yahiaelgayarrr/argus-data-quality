@@ -29,6 +29,7 @@ does, not just what it does.
 | [0007](0007-declarative-rule-config.md) | Declarative rules in YAML, implementations in Python | Accepted |
 | [0008](0008-interface-sequencing.md) | Interface build order: CLI, then HTML, then API, then dashboard | Accepted |
 | [0009](0009-data-versioning-tool.md) | Data versioning with DVC | Accepted |
+| [0010](0010-autoencoder-in-scope.md) | Autoencoder anomaly detection moved into scope | Accepted (supersedes the deferral) |
 
 ## Writing a new ADR
 
