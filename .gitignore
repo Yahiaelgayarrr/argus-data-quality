@@ -1,39 +1,99 @@
+# ---------------------------------------------------------------------------
+# Data — never committed. See docs/adr/0009-data-versioning-tool.md
+# ---------------------------------------------------------------------------
+data/*
+!data/.gitkeep
+!data/fixtures/
+!data/fixtures/**
+
+# DVC keeps the metafiles, not the payload
+/data/**/*.csv
+/data/**/*.csv.gz
+/data/**/*.parquet
+!tests/fixtures/**
+
+# Ground-truth corruption labels are generated, not committed
+labels/
+*.labels.json
+
+# ---------------------------------------------------------------------------
+# Generated outputs
+# ---------------------------------------------------------------------------
+outputs/*
+!outputs/.gitkeep
+reports/*
+!reports/.gitkeep
+*.log
+
+# ---------------------------------------------------------------------------
 # Python
+# ---------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .coverage
+coverage.xml
 htmlcov/
+.tox/
 
-# Virtual environments
+# Environments
 .venv/
 venv/
 env/
+.python-version
 
-# Local secrets and environment
+# ---------------------------------------------------------------------------
+# DVC
+# ---------------------------------------------------------------------------
+/.dvc/cache
+/.dvc/tmp
+/.dvc/config.local
+
+# ---------------------------------------------------------------------------
+# ML artifacts
+# ---------------------------------------------------------------------------
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.joblib
+*.pkl
+.cache/
+sentence_transformers_cache/
+
+# ---------------------------------------------------------------------------
+# Notebooks
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Dashboard (Module 4)
+# ---------------------------------------------------------------------------
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.vite/
+npm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Secrets
+# ---------------------------------------------------------------------------
 .env
 .env.*
 !.env.example
 
-# Data and generated artifacts
-data/raw/
-data/interim/
-data/processed/
-outputs/**
-!outputs/.gitkeep
-
-# Notebooks
-.ipynb_checkpoints/
-
-# OS/editor
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
-
-
-dataset/
-*.csv
-
+*.swp
